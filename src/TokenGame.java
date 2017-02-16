@@ -18,13 +18,19 @@ public class TokenGame {
 		int player = 1;
 		
 		while (!command[0].equals("exit")) {
-			
+
 			if (command[0].equals("put")) {
 				
 				// make sure put comes with a column number
-				if (command.length > 1) {
+				if (command.length == 2) {
 					
-					if (!game.put(player, Integer.valueOf(command[1]))) {
+					int column = Integer.valueOf(command[1]);
+					
+					if (column > 4 || column < 1) {
+						
+						System.out.println("INVALID COMMAND: COLUMN MUST BE BETWEEN 1 AND 4");
+						
+					} else if (!game.put(player, Integer.valueOf(command[1]))) {
 						
 						// invalid put, column is full
 						System.out.println("ERROR");
