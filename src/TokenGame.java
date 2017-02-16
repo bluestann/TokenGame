@@ -18,7 +18,7 @@ public class TokenGame {
 			
 			// get user input
 			System.out.print("> ");
-			command = parseInput(console.nextLine());
+			String[] command = parseInput(console.nextLine());
 			
 			if (command.length < 1 || command.length > 2) {
 				
