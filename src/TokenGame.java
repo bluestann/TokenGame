@@ -9,17 +9,16 @@ public class TokenGame {
 		
 		Scanner console = new Scanner(System.in);
 		
-		System.out.print("> ");
-		
-		// get the command from user
-		String[] command = parseInput(console.nextLine());
-		
 		// game starts with player 1
 		int player = 1;
 		
 		boolean exit = false;
 		
 		while (!exit) {
+			
+			// get user input
+			System.out.print("> ");
+			command = parseInput(console.nextLine());
 			
 			if (command.length < 1 || command.length > 2) {
 				
@@ -83,10 +82,6 @@ public class TokenGame {
 			} else {
 				System.out.println("INVALID COMMAND");
 			}
-			
-			// get user input
-			System.out.print("> ");
-			command = parseInput(console.nextLine());
 			
 		}
 		
