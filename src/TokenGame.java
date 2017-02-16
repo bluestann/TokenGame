@@ -17,9 +17,17 @@ public class TokenGame {
 		// game starts with player 1
 		int player = 1;
 		
-		while (!command[0].equals("exit")) {
-
-			if (command[0].equals("put")) {
+		boolean exit = false;
+		
+		while (!exit) {
+			
+			if (command.length < 1 || command.length > 2) {
+				
+				System.out.println("INVALID COMMAND");
+				
+			} else if (command[0].equals("exit")) {
+				exit = true;
+			} else if (command[0].equals("put")) {
 				
 				// make sure put comes with a column number
 				if (command.length == 2) {
